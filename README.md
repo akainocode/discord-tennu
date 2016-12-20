@@ -10,7 +10,8 @@ Here's an example config.json:
 	"commandID":"!",
 	"admin":["<@your discord id>"],
 	"plugins":["test"]
-}```
+}
+```
 
 Here's an example test plugin:
 
