@@ -16,17 +16,22 @@ bot.on("ready", function(){
   		console.log('added plugin', plugin.name, 'with commands', plugin.commands.toString());
 		}
 });
-//	console.log(message.author + "(" + message.author.username +") " + message.cleanContent);
 
 bot.on("message", function(message) {
   if(commandPatt.test(message.cleanContent)){
-		console.log(message.author + "(" + message.author.username +") " + message.cleanContent);
+		console.log(message.guild + "(" + message.guild.name + ") - " + message.channel + "(" + message.channel.name + "): " + message.author + "(" + message.author.username +") " + message.cleanContent);
 	  var match = message.cleanContent.match(commandPatt);
-		if(commands[match[1]] !== null){
-			commands[match[1]](message, bot);
+		if(typeof commands[match[1]] == "function" && commands[match[1]] !== null){
+			try{
+				commands[match[1]](message, bot);
+			}catch(err){
+				console.log(err);
+			}
 		}
 	}
 });
-
+exports.client = bot;
+exports.commandID = commandID;
 console.log('got here');
 bot.login(config.token);
+exports.started = false;
