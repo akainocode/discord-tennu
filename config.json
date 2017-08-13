@@ -1,0 +1,6 @@
+{
+	"token": "<token as a string>",
+	"commandID":"!",
+	"admin":["<@your discord id>"],
+	"plugins":["test"]
+}
