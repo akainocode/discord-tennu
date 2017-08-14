@@ -8,7 +8,7 @@ var Test = {
   }},
   commands: ['test', 'test2'],
   name: 'Test',
-  help: ['test':'This is a test command', 'test2': 'this is a second test command']
+  help: {'test':'This is a test command', 'test2': 'this is a second test command'}
 }
 
 module.exports = Test;
